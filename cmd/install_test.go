@@ -117,7 +117,7 @@ func Test_RewriteKubeconfig(t *testing.T) {
 	match := re.FindAllIndex(kubeconfig, -1)
 
 	if len(match) != len(expectedContextsToReplace) {
-		t.Fatalf("unexpected error, got: %q, want: %q.", len(match), len(expectedContextsToReplace))
+		t.Fatalf("unexpected error, got: %d, want: %d.", len(match), len(expectedContextsToReplace))
 	}
 
 	kubeconfig = rewriteKubeconfig(kubeconfigExample, ip, context)
@@ -126,7 +126,7 @@ func Test_RewriteKubeconfig(t *testing.T) {
 	match = re.FindAllIndex(kubeconfig, -1)
 
 	if len(match) != len(expectedContextsToReplace) {
-		t.Fatalf("unexpected error, got: %q, want: %q.", len(match), len(expectedContextsToReplace))
+		t.Fatalf("unexpected error, got: %d, want: %d.", len(match), len(expectedContextsToReplace))
 	}
 }
 
